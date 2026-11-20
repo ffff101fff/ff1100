@@ -17,8 +17,8 @@ CAS1100-01 Computer Programming 프로젝트 (2026 Fall) · 2015101013 Jangbo Ha
 Python 3.9 이상에서 실행됩니다 (3.9 ~ 3.14에서 같은 결과 확인).
 
 ```bash
-git clone https://github.com/ffff101fff/fencing-pro-league.git
-cd fencing-pro-league
+git clone https://github.com/ffff101fff/f1utter.git
+cd f1utter
 pip install -r requirements.txt
 ```
 
