@@ -1,0 +1,6 @@
+﻿,region,athlete,name,sport,coverage,baseline,games_peak,games_share,days_in_games_windows,key,income_usd,income_type
+0,en,fury,타이슨 퓨리,boxing,1.0,16.57861230461067,100.14373128309032,0.1410646927353552,0.1357615894039735,fury,146000000,total (on-field 140M + off-field 6M)
+1,en,mcgregor,코너 맥그리거,mma,1.0,28.27848245285732,73.33362823182404,0.13354102474827828,0.1357615894039735,mcgregor,180000000,total (mostly whiskey brand sale; 22M fight purse)
+2,en,messi,리오넬 메시,football,1.0,78.59515003173756,1330.921983916083,0.15736307300118485,0.1357615894039735,messi,135000000,total (on-field 60M + off-field 75M)
+3,en,oh_su,오상욱,fencing,1.0,0.3552132078043357,51.07513253827175,0.4899806799102256,0.1357615894039735,oh_su,40000,prize only: world championship individual gold (salary/bonuses not public)
+4,en,ohtani,오타니 쇼헤이,baseball,1.0,29.630173783813007,44.99216123268814,0.1282561473758856,0.1357615894039735,ohtani,102500000,total (on-field 2.5M + off-field 100M)
