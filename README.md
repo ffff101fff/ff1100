@@ -12,13 +12,19 @@ CAS1100-01 Computer Programming 프로젝트 (2026 Fall) · 2015101013 Jangbo Ha
 | Q2. 펜싱 스타는 왜 '돈 버는 스타'가 되지 못하는가? | 대회 집중도, 관심도 배수 vs 수입 배수 |
 | Q3. 펜싱 프로 리그는 가능한가? | MMA 기준선(2004년), 경기 간 평균 간격, FIE 대회 일정 |
 
+### 분석 결과
+
+- **Q1** 한국어 위키에서 펜싱의 연간 조회가 가장 많았던 3일의 비중은 2016~2025년 중앙값 기준 13.9%로 다섯 종목 중 가장 높았습니다. 영어판에서는 MMA(2.6%)가 펜싱(2.4%)보다 높았습니다.
+- **Q2** 금액 배수는 타 종목 선수의 연간 총수입을 2026년 펜싱 세계선수권 개인전 우승 상금(4만 달러)으로 나눈 값입니다. 펜싱 선수의 연간 총수입은 자료에 없어 선수 간 연 소득 격차나 관심도가 소득에 미치는 효과를 추정하기 어렵습니다.
+- **Q3** 파리 올림픽에서 오상욱은 개인전 4일 뒤 단체전에 출전했습니다. FIE 개인전 386건에서 연속 출전 간격의 선수별 중앙값은 구본길·김지연 28일, 김준호 32일, 오상욱 35일입니다. 주간 리그의 지속 가능성을 판단하려면 반복 출전과 시즌 운영 자료가 더 필요합니다.
+
 ## 1. 환경 설정
 
 Python 3.9 이상에서 실행됩니다 (3.9 ~ 3.14에서 같은 결과 확인).
 
 ```bash
-git clone https://github.com/ffff101fff/f1utter.git
-cd f1utter
+git clone https://github.com/ffff101fff/ff1100.git
+cd ff1100
 pip install -r requirements.txt
 ```
 
@@ -60,7 +66,7 @@ python main.py --athlete oh_su    # 선수의 평상시 관심도, 대회 기간
 | `data/processed/interest.csv` | 5종목 관심도 (위키 일별·구글 트렌드 월별, 위키는 전체 조회 100만 건당으로 보정) | 43,442행 |
 | `data/processed/athletes.csv` | 스타 선수 12명의 위키 일별 관심도 | 54,741행 |
 | `data/processed/events.csv` | 올림픽·아시안게임 기간, UFC 리얼리티쇼 첫 방송일 | 13행 |
-| `data/star_income.csv` | 공개 연 수입 (Forbes 총수입 6명, 오상욱은 세계선수권 우승 상금) + 출처 URL | 7행 |
+| `data/star_income.csv` | 공개 금액 (Forbes 총수입 6명, 오상욱은 세계선수권 우승 상금) + 출처 URL | 7행 |
 | `data/match_load.csv` | UFC 연간 경기 수, 레알 마드리드·MLB 시즌 경기 수와 기간, 펜싱 하루 경기 수 + 출처 URL | 4행 |
 | `data/match_dates.csv` | 복싱·MMA 스타와 오상욱의 경기 날짜 + 출처 URL | 64행 |
 | `data/fie_results.csv` | 펜싱 선수 4명의 국제펜싱연맹(FIE) 개인전 출전 날짜·순위 | 386행 |

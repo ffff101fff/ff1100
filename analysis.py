@@ -153,8 +153,7 @@ def star_income(ath_metrics):
 
 
 def income_gap(inc, base="oh_su"):
-    """각 스타의 평상시 관심도·수입이 펜싱 스타(오상욱)의 몇 배인가.
-    관심도가 수십 배 차이인데 수입이 수천 배 차이라면, 관심의 크기만으로는 설명되지 않는다."""
+    """기준 선수 대비 관심도와 공개 금액의 비율을 각각 계산한다."""
     b = inc.set_index("athlete")
     ref = b.loc[base]
     others = b.drop(index=base).sort_values("income_usd")
@@ -268,7 +267,7 @@ def main():
     save(inc, "income_vs_interest.csv")
     gap = income_gap(inc)
     save(gap, "income_gap.csv")
-    print("\n[Q2] 오상욱 = 1 로 놓은 배수 (영어 위키 평상시 관심도, 공개 수입)")
+    print("\n[Q2] 오상욱 = 1 로 놓은 배수 (관심도 기준: 오상욱 영어 위키 평상시 관심도 / 금액 기준: 세계선수권 개인전 우승 상금 4만 달러)")
     print(gap.round(1).to_string(index=False))
 
     # Q3

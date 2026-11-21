@@ -95,7 +95,7 @@ EVENTS = [
 # 6. 파일 경로
 # ---------------------------------------------------------------
 # 모든 경로는 이 파일이 있는 폴더(저장소 폴더)를 기준으로 만든다.
-# 그래서 다른 폴더에서 실행하거나(python f1utter/main.py) IDE에서 실행해도 같은 파일을 찾는다.
+# 그래서 다른 폴더에서 실행하거나(python ff1100/main.py) IDE에서 실행해도 같은 파일을 찾는다.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 RAW_DIR = os.path.join(DATA_DIR, "raw")

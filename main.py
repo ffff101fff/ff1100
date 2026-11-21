@@ -99,9 +99,9 @@ def show_athlete(key):
             print(f"      ※ 최근 2년 중 조회 기록이 있는 날 {r['coverage']:.0%} (90% 미만이라 수입 비교에서 제외)")
     if key in income.index:
         i = income.loc[key]
-        print(f"  공개된 연 수입: ${i['income_usd']:,.0f} ({i['income_type']}, {i['period']})")
+        print(f"  공개 금액: ${i['income_usd']:,.0f} ({i['income_type']}, {i['period']})")
     else:
-        print("  공개된 연 수입 자료 없음")
+        print("  공개 금액 자료 없음")
 
 
 def main():

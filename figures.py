@@ -161,10 +161,10 @@ def fig5_income_gap(gap):
     ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v, _: f"{v:,.0f}배"))
     ax.set_ylim(-0.6, len(gap) - 0.2)
     ax.text(10.5, len(gap) - 0.45, "●  평상시 관심도 배수 (영어 위키)", color=MUTED, fontsize=9, va="center")
-    ax.text(400, len(gap) - 0.45, "■  수입 배수 (공개 수입)", color=FENCING, fontsize=9, va="center")
+    ax.text(400, len(gap) - 0.45, "■  연간 총수입 ÷ 펜싱 우승 상금", color=FENCING, fontsize=9, va="center")
     ax.tick_params(axis="y", length=0)
     ax.grid(axis="x", color=GRID, lw=0.6)
-    ax.set_title("관심은 수십 배 차이, 돈은 수천 배 차이 - 오상욱을 1로 놓았을 때", loc="left", fontsize=11, color=INK)
+    ax.set_title("평상시 관심도와 공개 금액은 얼마나 차이가 날까?", loc="left", fontsize=11, color=INK)
     save(fig, "fig5_income_gap.png")
 
 
@@ -187,7 +187,7 @@ def fig6_match_gaps(mg):
     ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v, _: f"{v:g}일"))
     ax.tick_params(axis="y", length=0)
     ax.grid(axis="x", color=GRID, lw=0.6)
-    ax.set_title("다음 경기까지 평균 며칠 쉬는가\n복싱·MMA(하늘색)는 5개월~1년 넘게, 펜싱(보라)은 4일",
+    ax.set_title("선수·팀의 출전 간격 (일)\n파리 올림픽 개인전과 단체전 간격은 4일",
                  loc="left", fontsize=10.5, color=INK)
     save(fig, "fig6_match_gaps.png")
 
