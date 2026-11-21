@@ -110,3 +110,7 @@ boxing은 박싱데이 검색이 섞이므로 **'스포츠 주제' ID**로 검�
 | `collect_wiki.py` | 위키 종목·선수·전체 일별 조회수 수집 (리다이렉트 처리) |
 | `load_gtrends.py` | 구글 트렌드 CSV 읽기 (설명 줄 제거, `<1` 처리, 한글/영어 열 이름 통일) |
 | `data/raw/gtrends_keyword/`, `data/raw/archive/` | 초기 수집 자료 (단어 검색의 동음이의어 문제 증거, 이전 비교 구성) |
+
+## 제안서 통계 검정 재현
+
+`python proposal_checks.py`로 상위 1·3·10일 민감도, 올림픽 상대 관심도 회귀(Newey–West 7·30일), 대회 후 60~90일 잔존율, 한국어판 선수 집중도 정확 순열검정 및 Google Trends 월별 비교를 출력합니다. 입력은 제안서 제출본 CSV입니다.
