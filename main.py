@@ -107,7 +107,7 @@ def show_athlete(key):
 def main():
     """명령행 옵션을 읽어 전체 실행 / 종목 조회 / 선수 조회 / 목록 중 하나를 고른다."""
     parser = argparse.ArgumentParser(
-        description="올림픽 3일의 스타, 나머지 1,458일은? - 펜싱 프로 리그의 가능성 분석 프로그램")
+        description="3일의 관심, 362일의 공백 - 펜싱 프로 리그 가능성 분석 프로그램")
     parser.add_argument("--rebuild", action="store_true", help="원본에서 데이터셋을 다시 만든 뒤 전체 실행")
     parser.add_argument("--sport", help="종목 지표 조회 (예: fencing)")
     parser.add_argument("--athlete", help="선수 지표 조회 (예: oh_su)")

@@ -2,8 +2,8 @@
 # 분석 결과 그래프를 figures/ 폴더에 PNG로 저장한다.
 # 실행: python figures.py   (analysis.py 실행 후)
 #
-# 색: 펜싱만 보라색으로 강조하고, 비교의 기준이 되는 MMA(복싱)는 하늘색, 나머지는 회색 + 직접 라벨.
-# 보라·분홍·회색은 색각 이상(적록·청황)에서도 서로 구분되는 조합으로 골랐다.
+# 색: 펜싱만 파란색으로 강조하고, 비교의 기준이 되는 MMA(복싱)는 분홍색, 나머지는 은회색 + 직접 라벨.
+# 파랑·분홍·은회색은 색각 이상(적록·청황)에서도 서로 구분되는 조합으로 골랐다.
 
 import os
 
@@ -18,10 +18,10 @@ import analysis
 import config
 
 FIG_DIR = config.FIG_DIR
-FENCING = "#5b47c8"
-MMA = "#2f8fd6"
-OTHER = "#b3b0bc"
-INK, MUTED, GRID = "#1e1a33", "#55516e", "#e6e2f0"
+FENCING = "#1f6fff"
+MMA = "#b83266"
+OTHER = "#b4bcc8"
+INK, MUTED, GRID = "#15324b", "#5c6372", "#dce6f7"
 
 
 def setup_font():
