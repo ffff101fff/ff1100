@@ -23,8 +23,8 @@ CAS1100-01 Computer Programming 프로젝트 (2026 Fall) · 2015101013 Jangbo Ha
 Python 3.9 이상에서 실행됩니다 (3.9 ~ 3.14에서 같은 결과 확인).
 
 ```bash
-git clone https://github.com/ffff101fff/ff1100.git
-cd ff1100
+git clone https://github.com/ffff101fff/fff1100.git
+cd fff1100
 pip install -r requirements.txt
 ```
 
