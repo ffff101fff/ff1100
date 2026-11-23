@@ -163,6 +163,15 @@ def income_gap(inc, base="oh_su"):
                          "oh_peak_vs_baseline": ref["games_peak"] / others["baseline"]})
 
 
+def income_only(base="oh_su"):
+    """관심도 자료와 상관없이 공개 수입만 기준 선수와 비교한다 (호날두·메이웨더 포함)"""
+    income = pd.read_csv(config.INCOME_FILE).set_index("key")
+    ref = income.loc[base, "income_usd"]
+    others = income.drop(index=base).sort_values("income_usd", ascending=False)
+    return pd.DataFrame({"name": others["name_ko"], "sport": others["sport"],
+                         "income_usd": others["income_usd"], "income_x": others["income_usd"] / ref})
+
+
 # ---------------------------------------------------------------
 # Q3-a. MMA 기준선: 구글 트렌드 평상시 관심도 (대회가 열린 달을 뺀 연도별 중앙값)
 #   구글 트렌드는 한 화면에서 비교한 종목끼리만 같은 척도이므로, 2004년 MMA와 지금의 펜싱을
@@ -213,6 +222,14 @@ def match_gaps():
 # Q3-c. 펜싱 선수 4명의 국제펜싱연맹(FIE) 개인전 일정
 #   지금 펜싱 선수가 대회에 나가는 간격은 몸(회복)이 아니라 대회 일정이 정한다는 것을 확인한다.
 # ---------------------------------------------------------------
+def rest_ratio(mg, base="oh_su_paris"):
+    """복싱·MMA의 경기 간 평균 간격이 기준(오상욱 파리 올림픽 4일)의 몇 배인가"""
+    ref = mg.loc[mg["series"] == base, "mean_gap"].iloc[0]
+    duel = mg[mg["sport"].isin(["boxing", "mma"])]
+    return pd.DataFrame({"label": duel["label"], "mean_gap": duel["mean_gap"],
+                         "x_vs_base": duel["mean_gap"] / ref}), ref
+
+
 def fie_schedule():
     fie = pd.read_csv(config.FIE_RESULTS_FILE, parse_dates=["date"])
     rows = []
@@ -269,6 +286,9 @@ def main():
     save(gap, "income_gap.csv")
     print("\n[Q2] 오상욱 = 1 로 놓은 배수 (관심도 기준: 오상욱 영어 위키 평상시 관심도 / 금액 기준: 세계선수권 개인전 우승 상금 4만 달러)")
     print(gap.round(1).to_string(index=False))
+    io = income_only()
+    print("\n[Q2] 공개 수입만 비교 (오상욱 4만 달러 = 1, 관심도 자료가 없는 호날두·메이웨더 포함)")
+    print(io.assign(income_x=io["income_x"].round(1)).to_string(index=False))
 
     # Q3
     gt = gtrends_yearly(data, games)
@@ -281,6 +301,9 @@ def main():
     print("\n[Q3] 다음 경기까지 평균 며칠 쉬는가 (출처: data/match_dates.csv, data/match_load.csv)")
     print(mg[["sport", "label", "matches", "mean_gap", "min_gap"]].round(1).to_string(index=False))
     print(f"  펜싱 하루 경기 수: {per_day['value']:.0f}경기 ({per_day['item']})")
+    rr, ref = rest_ratio(mg)
+    print(f"\n[Q3] 복싱·MMA가 다음 경기까지 쉬는 기간 ÷ 오상욱 파리 올림픽 간격({ref:.0f}일)")
+    print(rr.round(1).to_string(index=False))
 
     fs = fie_schedule()
     save(fs, "fie_schedule.csv")

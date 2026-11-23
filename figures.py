@@ -50,7 +50,7 @@ def save(fig, name):
 
 
 def color_of(sport):
-    """펜싱만 강조색(보라), 나머지 종목은 회색으로 칠한다."""
+    """펜싱만 강조색(파랑), 나머지 종목은 회색으로 칠한다."""
     return FENCING if sport == "fencing" else OTHER
 
 
